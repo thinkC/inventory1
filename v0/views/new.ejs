@@ -1,0 +1,73 @@
+<% include partials/header %>
+
+<div class="container">
+    <div class="row">
+<h1 style="text-align: center">Add new Chemical</h1>
+
+<form action="/chemicals" method="POST">
+    <div class="form-group">
+    <input class="form-control" type="text" name="code" placeholder="chemical code">
+    </div>
+    <div class="form-group">
+    <input class="form-control" type="text" name="desc" placeholder="chemical description">
+    </div>
+    <div class="form-group">
+    <input class="form-control" type="number" name="Iqty" id="initialQ" placeholder="initial quantity">
+    </div>
+     <div class="form-group">
+    <input class="form-control" type="number" name="stock" id="stockQ" placeholder="skock on hand">
+    </div>
+    <div class="form-group">
+    <input class="form-control" type="number" name="Rqty" id="requestedQ" placeholder="requested quantity">
+    </div>
+    <div class="form-group">
+    <input class="form-control" type="text" name="pac" placeholder="package type">
+    </div>
+    <div class="form-group">
+    <input class="form-control" type="text" name="lot" placeholder="lot number">
+    </div>
+    <div class="form-group">
+    <input class="form-control" type="text" name="dept" placeholder="department">
+    </div>
+    <div class="form-group">
+    <input class="form-control" type="text" name="country" placeholder="country">
+    </div>
+    <div class="form-group">
+    <input class="form-control" type="date" name="manu_date" placeholder=" manufacturing date">
+    </div>
+    <div class="form-group">
+    <input class="form-control" type="date" name="exp_date" placeholder=" expiration date">
+    </div>
+    
+    <button class="btn btn-lg btn-primary btn-block" id="getTotal">Submit</button>
+    <a href="/chemicals">Go Back</a>
+</form>
+</div>
+</div>
+
+<script>
+    var getTotal = document.getElementById('getTotal');
+    var initialQ = document.getElementById('initialQ')
+    var requestedQ = document.getElementById('requestedQ');
+    var stockQ = document.getElementById('stockQ');
+    
+    console.log(initialQ)
+    // var testing1 = "today";
+    // module.exports = testing1;
+    
+     getTotal.addEventListener('click', function(){
+        //  console.log('ok1234')
+        var val1 = Number(initialQ.value);
+        var val2 = Number(requestedQ.value);
+        sumAll(val1,val2);
+        // stockQ.innerText = sumAll(val1,val2);
+     })
+     
+     function sumAll(a,b){
+         var result = a - b;
+         console.log(result);
+         stockQ.innerText = result;
+         return result;
+     }
+</script>
+<% include partials/footer %>

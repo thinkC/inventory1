@@ -1,0 +1,71 @@
+<% include partials/header %>
+
+<div class="container">
+    
+ <div class="container">
+<header class="jumbotron">
+<h1 style="text-align: center">Chemical Inventory</h1>
+<a href="/chemicals/new" class="btn btn-primary btn-lg">Add new Chemicals</a> 
+</header>
+</div>
+
+<div id="output">
+<div id="output1"></div>
+    
+</div>
+
+<script>
+    var html = "";
+    html += '<table class="table table-hover">'
+    html += '<tr><th>Chemical Code</th><th>chemical Description</th><th>Initial Quantity</th><th>Stock</th>' 
+    
+    
+    html += '<th>Quantity Requested</th> <th>Package Type</th><th>LOT Number</th>'
+    html += '<th>Department</th><th>Country</th><th>Manu Date</th><th>Exp Date</th>'
+    <% for(var i=0; i< chemicalsVar.length; i++){ %>
+    
+        html += '<tr><td name="code"><%= chemicalsVar[i]["code"] %></td>';
+        html += '<td name="desc"><%= chemicalsVar[i]["desc"] %></td>';
+        html += '<td name="Iqty" id="initialQ" ><%= chemicalsVar[i]["Iqty"] %></td>';
+        html += '<td name="stock" id="stokeQ" ><%= chemicalsVar[i]["stock"] %></td>';
+        html += '<td name="Rqty" id="reqQ" ><%= chemicalsVar[i]["Rqty"] %></td>';
+        html += ' <td name="pac"><%= chemicalsVar[i]["pac"] %></td>';
+        html += '<td name="lot"><%= chemicalsVar[i]["lot"] %></td>';
+        html += '<td name="dept"><%= chemicalsVar[i]["dept"] %></td>';
+        html += '<td name="country"><%= chemicalsVar[i]["country"] %></td>';
+        html += '<td name="manu_date"><%= chemicalsVar[i]["manu_date"] %></td>';
+        html += '<td name="exp_date"><%= chemicalsVar[i]["exp_date"] %></td>';
+    <%}%>
+     document.getElementById('output').innerHTML = html;
+    //  var mm = localStorage.getItem('getTotal');
+    // console.log(mm)
+   
+    //  console.log('okkkk')
+
+ 
+    // var reqQ = document.getElementById('reqQ');
+    // var initialQ = document.getElementById('initialQ')
+    // var stockQ = document.getElementById('stockQ');
+    // console.log(reqQ)
+    // var qq = Number(reqQ.innerText);
+    // console.log(typeof qq);
+    
+    // (function(global){
+    //     var expose = {};
+    
+    //     expose.mm = Number(initialQ.innerText);
+
+    //     console.log(expose)
+    //     global.expose = expose;
+    // })(window);
+    // console.log(getTotal)
+
+</script>
+     <!--<div id="output1"></div>-->
+     
+ </div>  
+  
+<% include partials/footer %>
+
+
+<!--https://getbootstrap.com/docs/4.0/content/tables/-->

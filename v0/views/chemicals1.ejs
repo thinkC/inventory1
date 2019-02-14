@@ -1,0 +1,56 @@
+<% include partials/header %>
+<div class="container">
+ <div class="container">
+<header class="jumbotron">
+<h1 style="text-align: center">Chemical Inventory</h1>
+<a href="/chemicals/new" class="btn btn-primary btn-lg">Add new Chemicals</a> 
+</header>
+</div>
+
+
+
+ 
+ <div>
+ 
+ <table class="table table-hover">
+        <tr>
+            <th>Chemical Code</th>
+            <th>chemical Description</th>
+            <th>Initial Quantity</th>
+            <th>Quantity Requested</th>
+            <th>Package Type</th>
+            <th>LOT Number</th>
+            <th>Department</th>
+            <th>Country</th>
+            <th>Date</th>
+            
+        </tr>
+        <tbody>
+        <% for(var i=0; i<chemicalsVar.length; i++){ %>
+            
+            <tr>
+                <td name="code"><%= chemicalsVar[i]["code"] %></td>
+                <td name="desc"><%= chemicalsVar[i]["desc"] %></td>
+                <td name="Iqty"><%= chemicalsVar[i]["Iqty"] %></td>
+                <td name="Rqty"><%= chemicalsVar[i]["Rqty"] %></td>
+                <td name="pac"><%= chemicalsVar[i]["pac"] %></td>
+                <td name="lot"><%= chemicalsVar[i]["lot"] %></td>
+                <td name="dept"><%= chemicalsVar[i]["dept"] %></td>
+                <td name="country"><%= chemicalsVar[i]["country"] %></td>
+                <td name="manu_date"><%= chemicalsVar[i]["manu_date"] %></td>
+            </tr>
+            
+        </tbody>
+    </table>
+ 
+ 
+ 
+ </div>
+<% } %>
+
+
+</div>
+<% include partials/footer %>
+
+
+<!--https://getbootstrap.com/docs/4.0/content/tables/-->

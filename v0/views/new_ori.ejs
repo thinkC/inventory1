@@ -1,0 +1,56 @@
+<% include partials/header %>
+
+<div class="container">
+    <div class="row">
+<h1 style="text-align: center">Add new Chemical</h1>
+
+<form action="/chemicals" method="POST">
+    <div class="form-group">
+    <input class="form-control" type="text" name="code" placeholder="chemical code">
+    </div>
+    <div class="form-group">
+    <input class="form-control" type="text" name="desc" placeholder="chemical description">
+    </div>
+    <div class="form-group">
+    <input class="form-control" type="number" name="Iqty" id="initialQ" placeholder="initial quantity">
+    </div>
+     <div class="form-group">
+    <input class="form-control" type="number" name="stock" id="stockQ" placeholder="skock on hand">
+    </div>
+    <div class="form-group">
+    <input class="form-control" type="number" name="Rqty" id="requestedQ" placeholder="requested quantity">
+    </div>
+    <div class="form-group">
+    <input class="form-control" type="text" name="pac" placeholder="package type">
+    </div>
+    <div class="form-group">
+    <input class="form-control" type="text" name="lot" placeholder="lot number">
+    </div>
+    <div class="form-group">
+    <input class="form-control" type="text" name="dept" placeholder="department">
+    </div>
+    <div class="form-group">
+    <input class="form-control" type="text" name="country" placeholder="country">
+    </div>
+    <div class="form-group">
+    <input class="form-control" type="date" name="manu_date" placeholder=" manufacturing date">
+    </div>
+    <div class="form-group">
+    <input class="form-control" type="date" name="exp_date" placeholder=" expiration date">
+    </div>
+    
+    <button class="btn btn-lg btn-primary btn-block" id="getTotal">Submit</button>
+    <a href="/chemicals">Go Back</a>
+</form>
+</div>
+</div>
+
+<script>
+    // console.log(document.getElementById('getTotal'))
+    // console.log(expose.mm)
+     console.log(getTotal)
+     getTotal.addEventListener('click', function(){
+         console.log('ok1234')
+     })
+</script>
+<% include partials/footer %>
