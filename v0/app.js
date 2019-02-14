@@ -143,6 +143,10 @@ app.get("/chemicals/new", function(req, res) {
 
 
 
-app.listen(process.env.PORT, process.env.IP, function(){
+// app.listen(process.env.PORT, process.env.IP, function(){
+//     console.log('Inventory App started...')
+// })
+
+app.listen(3000, function(){
     console.log('Inventory App started...')
 })
